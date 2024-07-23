@@ -36,27 +36,10 @@ export const MarkdownEditor = () => {
   return (
     <>
       <ReactSimpleMdeEditor value={markdownValue} onChange={onChange} options={options} />
-      <h1
-        style={{
-          fontSize: '2.5rem',
-          fontWeight: 'bold',
-          marginBottom: '1rem',
-          textAlign: 'left',
-          paddingLeft: '1rem',
-        }}
-      >
-        プレビュー
-      </h1>
+      <h1 className="text-4xl font-bold mb-4 text-left pl-4">プレビュー</h1>
       <div
-        className="markdown-body"
-        style={{
-          padding: '1rem',
-          border: '1px solid #D1D5DB',
-          height: '300px',
-          overflowY: 'auto',
-          fontFamily: 'inherit',
-          fontSize: 'inherit',
-        }}
+        className="markdown-body p-4 border border-gray-300 h-72 overflow-y-auto"
+        style={{ fontFamily: 'inherit', fontSize: 'inherit' }}
       >
         <ReactMarkdown remarkPlugins={[remarkGfm, breaks]}>{markdownValue}</ReactMarkdown>
       </div>
